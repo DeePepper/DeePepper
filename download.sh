@@ -6,4 +6,12 @@ if [ $FILE == "data" ]; then
 	wget -N $URL -O $ZIP_FILE
 	unzip $ZIP_FILE -d ./data/
 	rm $ZIP_FILE
+	
+elif [ $FILE == "faceswap-model" ]; then
+	URL=https://www.dropbox.com/s/42r9jazjp30ktra/model_snapshot_150000_iters.zip?dl=0
+	ZIP_FILE=./model_dir/model.zip
+	mkdir -p ./model_dir/
+	wget -N $URL -O $ZIP_FILE
+	unzip $ZIP_FILE -d ./model_dir/
+	rm $ZIP_FILE
 fi
