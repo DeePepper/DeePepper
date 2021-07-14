@@ -111,3 +111,7 @@ for name, obj in inspect.getmembers(sys.modules[__name__]):
 os.system('bash download.sh faceswap-model') # shell script 실행
 path = os.getcwd()+"/model_dir/original.h5"
 model = load_model(path, compile=False)
+
+encoder = model.get_layer("encoder")
+decoder_a = model.get_layer("decoder_a")
+decoder_b = model.get_layer("decoder_b")
